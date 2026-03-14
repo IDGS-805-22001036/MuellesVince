@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700&display=swap');
+
+.cot-page {
+  min-height: 100vh;
+  background: #0d1117;
+  padding: 0 0 60px;
+  box-sizing: border-box;
+  font-family: 'Barlow', sans-serif;
+}
+
+/* ── TOPBAR ── */
+.cot-topbar {
+  height: 64px;
+  background: #0a1628;
+  border-bottom: 1px solid rgba(30,100,210,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.4);
+}
+
+.cot-back-btn {
+  position: absolute;
+  left: 18px;
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  cursor: pointer;
+  color: #4d8ef0;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.cot-back-btn:hover {
+  background: rgba(30,100,210,0.15);
+}
+
+.cot-title {
+  margin: 0;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  letter-spacing: 4px;
+  color: #f9fafb;
+}
+
+/* ── MAIN CONTAINER ── */
+.cot-container {
+  width: 80%;
+  margin: 36px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+/* ── CARDS ── */
+.cot-card,
+.cot-summary-card {
+  background: #0a1628;
+  border: 1px solid rgba(30,100,210,0.15);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+  padding: 28px;
+}
+
+.cot-card h2,
+.cot-items-header h2 {
+  margin: 0 0 24px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  letter-spacing: 3px;
+  color: #f9fafb;
+}
+
+/* ── FORM GRID ── */
+.cot-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.cot-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.cot-full {
+  grid-column: 1 / -1;
+}
+
+.cot-group label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  color: #9ca3af;
+  font-weight: 600;
+}
+
+.cot-group input,
+.cot-group textarea,
+.cot-group select {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 11px 14px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 14px;
+  color: #f9fafb;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.cot-group input:focus,
+.cot-group textarea:focus,
+.cot-group select:focus {
+  border-color: rgba(30,100,210,0.6);
+  box-shadow: 0 0 0 3px rgba(30,100,210,0.1);
+}
+
+.cot-group textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* ── PARTIDAS HEADER ── */
+.cot-items-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.cot-add-item-btn {
+  background: linear-gradient(135deg, #1e64d2, #1040a0);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(30,100,210,0.35);
+  transition: all 0.25s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cot-add-item-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(30,100,210,0.5);
+}
+
+/* ── PARTIDAS TABLE ── */
+.cot-items-table {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cot-items-head {
+  display: grid;
+  grid-template-columns: 2.4fr 0.8fr 1fr 1fr 0.5fr;
+  gap: 12px;
+  padding: 0 4px;
+}
+
+.cot-items-head span {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #4d8ef0;
+}
+
+.cot-items-row {
+  display: grid;
+  grid-template-columns: 2.4fr 0.8fr 1fr 1fr 0.5fr;
+  gap: 12px;
+  align-items: center;
+}
+
+.cot-items-row input {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 11px 14px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 14px;
+  color: #f9fafb;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.cot-items-row input:focus {
+  border-color: rgba(30,100,210,0.6);
+  box-shadow: 0 0 0 3px rgba(30,100,210,0.1);
+}
+
+.cot-importe {
+  text-decoration: none;
+  border: 1px solid rgba(30,100,210,0.35);
+  background: rgba(30,100,210,0.18);
+  color: #60a5fa;
+  padding: 11px 12px;
+  border-radius: 8px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  display: inline-block;
+  text-align: right;
+}
+
+.cot-delete-item-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 11px 12px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: rgba(220,38,38,0.15);
+  color: #f87171;
+  border: 1px solid rgba(220,38,38,0.3);
+}
+
+.cot-delete-item-btn:hover {
+  background: rgba(220,38,38,0.25);
+}
+
+/* ── SUMMARY ── */
+.cot-summary-card {
+  width: 360px;
+  margin-left: auto;
+}
+
+.cot-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-size: 15px;
+  color: #d1d5db;
+}
+
+.cot-summary-row strong {
+  color: #f9fafb;
+}
+
+.cot-total {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.cot-total strong {
+  color: #60a5fa;
+}
+
+/* ── GENERATE BUTTON ── */
+.cot-generate-btn {
+  width: 100%;
+  margin-top: 24px;
+  background: linear-gradient(135deg, #1e64d2, #1040a0);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 13px 20px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(30,100,210,0.35);
+  transition: all 0.25s;
+}
+
+.cot-generate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(30,100,210,0.5);
+}
+
+.cot-generate-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 992px) {
+  .cot-container {
+    width: calc(100% - 32px);
+  }
+
+  .cot-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cot-full {
+    grid-column: auto;
+  }
+
+  .cot-items-head,
+  .cot-items-row {
+    grid-template-columns: 1.8fr 0.8fr 1fr 1fr 0.6fr;
+  }
+
+  .cot-summary-card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .cot-container {
+    width: calc(100% - 32px);
+    margin-top: 24px;
+  }
+
+  .cot-card,
+  .cot-summary-card {
+    padding: 20px;
+  }
+
+  .cot-items-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cot-add-item-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cot-items-head {
+    display: none;
+  }
+
+  .cot-items-row {
+    grid-template-columns: 1fr;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px;
+    padding: 12px;
+  }
+
+  .cot-importe {
+    text-align: left;
+  }
+
+  .cot-summary-card {
+    margin-left: 0;
+  }
+}
