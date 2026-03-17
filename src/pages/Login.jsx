@@ -29,6 +29,9 @@ function Login() {
       setLoading(true);
       setError("");
 
+    console.log("API URL:", import.meta.env.VITE_API_URL);
+    console.log("AXIOS BASE URL:", api.defaults.baseURL);
+
       const res = await api.post("/auth/login", {
         correo: user,
         password: pass,
