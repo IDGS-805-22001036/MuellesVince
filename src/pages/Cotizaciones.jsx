@@ -160,7 +160,7 @@ function Cotizaciones() {
       limpiarFormulario();
 
       if (id) {
-        const baseURL = api.defaults.baseURL || "http://localhost:3000";
+        const baseURL = import.meta.env.VITE_API_URL;
         const origin = new URL(baseURL).origin;
         window.open(`${origin}/cotizaciones/${id}/pdf`, "_blank");
       }
@@ -188,7 +188,7 @@ function Cotizaciones() {
   };
 
   const obtenerUrlPdf = (id) => {
-    const baseURL = api.defaults.baseURL || "http://localhost:3000";
+    const baseURL = import.meta.env.VITE_API_URL;
     const origin = new URL(baseURL).origin;
     return `${origin}/cotizaciones/${id}/pdf`;
   };

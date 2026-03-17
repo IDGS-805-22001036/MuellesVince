@@ -134,7 +134,7 @@ function Facturas() {
   const obtenerUrlPdf = (id) => {
     if (!id) return "#";
 
-    const baseURL = api.defaults.baseURL || "http://localhost:3000";
+    const baseURL = import.meta.env.VITE_API_URL;
     const origin = new URL(baseURL).origin;
 
     return `${origin}/facturas/${id}/pdf`;
