@@ -36,6 +36,17 @@ function Cotizaciones() {
     obtenerCotizaciones();
   }, []);
 
+  const obtenerBaseBackend = () => {
+    const baseURL = api?.defaults?.baseURL || "http://localhost:3000";
+
+    try {
+      return new URL(baseURL).origin;
+    } catch (error) {
+      console.error("Base URL inválida:", baseURL);
+      return "http://localhost:3000";
+    }
+  };
+
   const obtenerCotizaciones = async () => {
     try {
       const res = await api.get("/cotizaciones");
@@ -160,8 +171,7 @@ function Cotizaciones() {
       limpiarFormulario();
 
       if (id) {
-        const baseURL = import.meta.env.VITE_API_URL;
-        const origin = new URL(baseURL).origin;
+        const origin = obtenerBaseBackend();
         window.open(`${origin}/cotizaciones/${id}/pdf`, "_blank");
       }
 
@@ -188,8 +198,8 @@ function Cotizaciones() {
   };
 
   const obtenerUrlPdf = (id) => {
-    const baseURL = import.meta.env.VITE_API_URL;
-    const origin = new URL(baseURL).origin;
+    if (!id) return "#";
+    const origin = obtenerBaseBackend();
     return `${origin}/cotizaciones/${id}/pdf`;
   };
 

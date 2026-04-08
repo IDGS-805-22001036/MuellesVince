@@ -1,7 +1,9 @@
 import axios from "axios";
 
+export const API_URL = "https://muellesvince-backend-production.up.railway.app";
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
+  baseURL: "https://muellesvince-backend-production.up.railway.app",
 });
 
 export default api;

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import api from "../services/api";
+import api, { API_URL } from "../services/api";
 import "../App.css";
 import logo from "../img/LogoTaller-removebg-preview.png";
 
@@ -29,12 +29,12 @@ function Login() {
       setLoading(true);
       setError("");
 
-    console.log("API URL:", import.meta.env.VITE_API_URL);
-    console.log("AXIOS BASE URL:", api.defaults.baseURL);
+      console.log("API URL:", import.meta.env.VITE_API_URL);
+      console.log("AXIOS BASE URL:", api.defaults.baseURL);
 
-      const res = await api.post("/auth/login", {
-        correo: user,
-        password: pass,
+      const res = await api.post(API_URL + "/auth/login", {
+        correo: user.trim(),
+        password: pass.trim(),
       });
 
       const token = res.data?.access_token;
@@ -47,7 +47,6 @@ function Login() {
 
       localStorage.setItem("token", token);
       localStorage.setItem("usuario", JSON.stringify(usuario));
-      localStorage.removeItem("auth");
 
       navigate("/dashboard", {
         replace: true,
